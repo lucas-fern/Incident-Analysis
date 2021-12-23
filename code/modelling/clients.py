@@ -52,6 +52,30 @@ Geotec = Client(
     }
 )
 
+# Border doesn't seem to link actions to incidents, so can't be modelled.
+# Removing the numeric predictive model would allow us to predict this client.
+Border = Client(
+    incident_mapping = {
+        'id': 'A',
+        'location': 'C',
+        'description': 'H',
+        'injury-severity': 'K',
+        'incident-type': 'E'
+    },
+
+    factor_mapping = {
+        'id': 'A',
+        'factor-level': 'D',
+        'factor-text': 'F'
+    },
+
+    action_mapping = {
+        'id': None,
+        'action-id': 'A'
+    }
+)
+
+# Warak's dataset is insufficient for modelling
 Warak = Client(
     incident_mapping = {
         'id': 'A',
